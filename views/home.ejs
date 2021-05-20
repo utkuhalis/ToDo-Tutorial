@@ -90,10 +90,10 @@
 		<table>
 			<thead>
 				<tr>
-					<th>Görev</th>
-					<th>Bitiş Tarihi</th>
-					<th>Durumu</th>
-					<th>İşlem</th>
+					<th>Mission</th>
+					<th>Due Date</th>
+					<th>State</th>
+					<th>#</th>
 				</tr>
 			</thead>
 
@@ -107,13 +107,13 @@
 							<%= new Date(data[i].bitis).toLocaleString() %>
 						</td>
 						<td>
-							<%= data[i].durum==false ? "Yapılmadı" : "Yapıldı" %>
+							<%= data[i].durum==false ? "Not Done" : "Done" %>
 						</td>
 						<td>
 							<button onclick="update('<%= data[i]._id %>', <%= data[i].durum == true ? false : true %>)">
-								<%= data[i].durum==true ? "Yapılmadı Yap" : "Yapıldı Yap" %>
+								<%= data[i].durum==true ? "Uncheck" : "Check" %>
 							</button>
-							<button onclick="remove('<%= data[i]._id %>')">Sil</button>
+							<button onclick="remove('<%= data[i]._id %>')">Delete</button>
 						</td>
 					</tr>
 					<% } %>
